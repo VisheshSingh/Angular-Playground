@@ -7,21 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class UserComponent implements OnInit {
-  name: string = "John Doe";
-  age: number = 25;
-  email: string = "JohnDoe@hooli.com";
-  address: {
-    street: '50 Main st',
-    city: 'Boston',
-    state: 'MA'
-  }
-  
+  name: string;
+  age: number;
+  email: string;
+  address: Address;
+  hobbies: string[];
+
   constructor() { 
     console.log("Constructor ran...");
   }
 
   ngOnInit() {
     console.log("ngOnInit ran...");
+
+    this.name = "John Doe";
+    this.age = 25;
+    this.email = "JohnDoe@gmail.com";
+    this.address = {
+      street: '50 Main st',
+      city: 'Boston',
+      state: 'MA'
+    }
+    this.hobbies = ["Write code", "Play Music", "Photography", "Design"];
+
   }
 
+}
+
+interface Address {
+    street: string,
+    city: string,
+    state: string
 }
