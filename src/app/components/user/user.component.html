@@ -13,6 +13,6 @@
   <input type="text" #hobby/>
 </form>
 <ul>
-  <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+  <li *ngFor="let hobby of hobbies">{{hobby}} <button (click)="deleteHobby(hobby)">X</button></li>
 </ul>
 

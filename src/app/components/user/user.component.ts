@@ -37,6 +37,15 @@ export class UserComponent implements OnInit {
 
   addHobby(hobby){
     this.hobbies.unshift(hobby);
+    return false;
+  }
+
+  deleteHobby(hobby){
+    for(let i=0;i<this.hobbies.length;i++){
+      if(this.hobbies[i] == hobby) {
+        this.hobbies.splice(i, 1);
+      }
+    }
   }
 
 }
