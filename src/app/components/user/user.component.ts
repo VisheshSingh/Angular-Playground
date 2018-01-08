@@ -35,6 +35,10 @@ export class UserComponent implements OnInit {
     this.name = "Richard Hendricks";
   }
 
+  addHobby(hobby){
+    this.hobbies.unshift(hobby);
+  }
+
 }
 
 interface Address {
