@@ -29,7 +29,10 @@ export class UserComponent implements OnInit {
       state: 'MA'
     }
     this.hobbies = ["Write code", "Play Music", "Photography", "Design"];
+  }
 
+  onClick(){
+    this.name = "Richard Hendricks";
   }
 
 }
