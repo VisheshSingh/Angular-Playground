@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -12,8 +13,9 @@ export class UserComponent implements OnInit {
   email: string;
   address: Address;
   hobbies: string[];
+  posts: Posts;
 
-  constructor() { 
+  constructor(private DS: DataService) { 
     console.log("Constructor ran...");
   }
 
@@ -29,6 +31,11 @@ export class UserComponent implements OnInit {
       state: 'MA'
     }
     this.hobbies = ["Write code", "Play Music", "Photography", "Design"];
+
+    this.DS.getPosts().subscribe((posts) => {
+      //console.log(posts);
+      this.posts = posts;
+    })
   }
 
   onClick(){
@@ -54,4 +61,11 @@ interface Address {
     street: string,
     city: string,
     state: string
+}
+
+interface Posts {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
 }
