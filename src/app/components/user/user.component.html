@@ -6,8 +6,9 @@
 </ul>
 
 <button (click)="onClick()">Change name</button>
+<button (click)="toggleEdit()">Edit User</button>
 
-<div>
+<div *ngIf=isEdit>
   <h2>Edit User:</h2>
   <form>
     <div>
